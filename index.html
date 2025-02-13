@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Basic Charts and Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Bar Chart Styling */
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 200px;
+        }
+        .bar {
+            width: 30px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        .bar1 { height: 150px; }
+        .bar2 { height: 100px; }
+        .bar3 { height: 180px; }
+        .bar4 { height: 130px; }
+        .bar5 { height: 200px; }
+
+        /* Pie Chart Styling */
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(#36A2EB 0% 40%, #FF6384 40% 80%, #FFCE56 80% 100%);
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white p-5 hidden md:block">
+            <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
+            <nav>
+                <ul>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Dashboard</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Reports</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Users</a></li>
+                    <li class="mb-4"><a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Top Navbar -->
+            <header class="bg-gray-800 text-white shadow p-4 flex justify-between items-center">
+                <h2 class="text-lg font-semibold">Dashboard Overview</h2>
+                <button class="md:hidden bg-gray-700 text-white px-4 py-2 rounded">Menu</button>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Stats Cards -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">Revenue</h3>
+                    <p class="mt-2 text-gray-600 text-2xl font-bold">$12,345</p>
+                    <p class="mt-2 text-gray-500">Your total revenue for this month. It shows the overall earnings from all products.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">Users</h3>
+                    <p class="mt-2 text-gray-600 text-2xl font-bold">1,234 Active</p>
+                    <p class="mt-2 text-gray-500">Number of active users on your platform. You have seen a steady growth in user engagement.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">New Orders</h3>
+                    <p class="mt-2 text-gray-600 text-2xl font-bold">567 Orders</p>
+                    <p class="mt-2 text-gray-500">This includes all new orders placed within this month, with an increase in demand recently.</p>
+                </div>
+
+                <!-- Bar Chart -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">Sales Overview</h3>
+                    <p class="mt-2 text-gray-500">Sales trends for the past few months, showing growth in January and consistent performance in other months.</p>
+                    <div class="bar-chart mt-4">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                        <div class="bar bar4"></div>
+                        <div class="bar bar5"></div>
+                    </div>
+                </div>
+
+                <!-- Pie Chart -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">Revenue Breakdown</h3>
+                    <p class="mt-2 text-gray-500">How your total revenue is distributed among different product categories. Product A brings in the most revenue.</p>
+                    <div class="pie-chart mt-4"></div>
+                </div>
+
+                <!-- Orders Overview -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">Orders Overview</h3>
+                    <p class="mt-2 text-gray-600">You have a total of 567 orders. 70% have been completed, 20% are pending, and 10% have been canceled.</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-gray-700">
+                            <p><strong>Completed:</strong> 398</p>
+                            <p><strong>Pending:</strong> 113</p>
+                            <p><strong>Cancelled:</strong> 56</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Growth -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold">User Growth</h3>
+                    <p class="mt-2 text-gray-600">Your platform's user base has been growing steadily over the last few months. Here's an overview of new sign-ups:</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-gray-700">
+                            <p><strong>January:</strong> 200</p>
+                            <p><strong>February:</strong> 450</p>
+                            <p><strong>March:</strong> 700</p>
+                            <p><strong>April:</strong> 1200</p>
+                            <p><strong>May:</strong> 600</p>
+                            <p><strong>June:</strong> 900</p>
+                            <p><strong>July:</strong> 1100</p>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+</body>
+</html>
